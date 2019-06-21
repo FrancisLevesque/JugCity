@@ -1,0 +1,14 @@
+#!/usr/bin/ruby
+require './climb'
+require './formatter'
+
+if ARGV.empty?
+  puts "Pass in a climbing grade to generate dice roll combinations."
+  puts "Valid grades:"
+  Climb::CLIMB_PROBABILITIES.keys.map do |grade|
+    puts "  - #{grade}"
+  end
+end
+
+climb = Climb.new(ARGV.first)
+puts climb.probability_set
