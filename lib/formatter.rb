@@ -1,5 +1,5 @@
 class Formatter
-  def self.print(set)
+  def self.clean(set)
     base = ''
     set.each do |item|
       base += " #{item} "

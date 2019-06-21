@@ -11,4 +11,4 @@ if ARGV.empty?
 end
 
 climb = Climb.new(ARGV.first)
-puts climb.probability_set
+puts Formatter.clean(climb.probability_set)
