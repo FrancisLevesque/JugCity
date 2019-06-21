@@ -1,4 +1,4 @@
-require './probability'
+require './lib/probability'
 
 class Climb
   DICE_PROBABILITIES = {
@@ -26,6 +26,7 @@ class Climb
   }
 
   def initialize(difficulty)
+    raise "#{difficulty} is not a supported climbing grade." if CLIMB_PROBABILITIES[difficulty].nil?
     @difficulty = difficulty
   end
 

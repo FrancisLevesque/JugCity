@@ -1,4 +1,4 @@
-require './probability'
+require './lib/probability'
 
 RSpec.describe Probability do
   describe '#get_dice_numbers' do

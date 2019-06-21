@@ -1,6 +1,13 @@
-require './climb'
+require './lib/climb'
 
 RSpec.describe Climb do
+  describe '#initialize' do
+    it 'raises an error for a 5.6 climb' do
+      error = '5.6 is not a supported climbing grade.'
+      expect { Climb.new('5.6') }.to raise_error(RuntimeError, error)
+    end
+  end
+
   describe '#probability_set' do
     it 'for a 5.7 should include every dice number' do
       climb = Climb.new('5.7')

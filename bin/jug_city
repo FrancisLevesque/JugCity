@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
-require './climb'
-require './formatter'
+require './lib/climb'
+require './lib/formatter'
 
 if ARGV.empty?
   puts "Pass in a climbing grade to generate dice roll combinations."
