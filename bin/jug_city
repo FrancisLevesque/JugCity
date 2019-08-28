@@ -1,14 +1,28 @@
 #!/usr/bin/ruby
+require './lib/beta'
 require './lib/climb'
 require './lib/formatter'
 
 if ARGV.empty?
-  puts "Pass in a climbing grade to generate dice roll combinations."
-  puts "Valid grades:"
+  puts 'Pass in a climbing grade to generate dice roll combinations.'
+  puts 'Valid grades:'
   Climb::CLIMB_PROBABILITIES.keys.map do |grade|
     puts "  - #{grade}"
   end
+  puts
+  puts 'You can also pass in a Beta level for dice rool combinations.'
+  puts 'Valid Beta levels:'
+  Beta::BETA_PROBABILITIES.keys.map do |beta|
+    puts "  - #{beta}"
+  end
 end
 
-climb = Climb.new(ARGV.first)
-puts Formatter.clean(climb.probability_set)
+input = ARGV.first
+if Climb::CLIMB_PROBABILITIES.include?(input)
+  climb = Climb.new(input)
+  puts Formatter.clean(climb.probability_set)
+else
+  beta = Beta.new(input)
+  puts Formatter.clean(beta.probability_set)
+end
+  

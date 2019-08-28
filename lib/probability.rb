@@ -19,6 +19,7 @@ class Probability
         end
       end
     end
+    puts "Percentage: #{total_percent}"
     dice_numbers
   end
 
@@ -28,6 +29,7 @@ class Probability
   end
 
   def random_chance
-    rand(2) == 0
+    random = rand(3)
+    random == 0 || random == 1
   end
 end
